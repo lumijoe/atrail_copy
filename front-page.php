@@ -1,69 +1,102 @@
 <?php get_header(); ?>
-    <section class="section-contents" id="shop">
-      <div class="wrapper">
-<?php
-$shop_obj = get_page_by_path( 'shop' );
-$post = $shop_obj;
-setup_postdata( $post );
-$shop_title = get_the_title();
-?>
-        <span class="section-title-en"><?php the_field( 'english_title' ); ?></span>
-        <h2 class="section-title"><?php the_title(); ?></h2>
-        <p class="section-lead"><?php echo get_the_excerpt(); ?></p>
-<?php wp_reset_postdata(); ?>
-        <ul class="shops">
-<?php
-$shop_pages = get_child_pages( 4, $shop_obj->ID );
-if ( $shop_pages->have_posts() ) :
-	while ( $shop_pages->have_posts() ) : $shop_pages->the_post();
-?>
+<!-- ------------------------------
+//////////// 店舗情報 shop
+------------------------------- -->
+<section class="section-contents" id="shop">
+  <div class="wrapper">
+
+
+    <!----------------------------
+    /////// 使用するページの要素を取得するphp
+    ----------------------------->
+    <?php
+    // 固定ページを表示させる（引数：ページのスラッグ）
+    $shop_obj = get_page_by_path('shop');
+    // 投稿記事
+    $post = $shop_obj;
+    // 固定ページの投稿記事を使用する宣言（引数：関数定義）
+    setup_postdata($post);
+    // タイトルを取得
+    $shop_title = get_the_title();
+    ?>
+    <!----------------------------
+    // 取得したphpなどのhtml予約
+    ----------------------------->
+    <!-- 英語のタイトル -->
+    <span class="section-title-en"><?php the_field('english_title'); ?></span>
+    <!-- ❶タイトル -->
+    <h2 class="section-title"><?php the_title(); ?></h2>
+    <!-- 本文 -->
+    <p class="section-lead"><?php echo get_the_excerpt(); ?></p>
+    <!-- ❸投稿表示ループ終わりの宣言 -->
+    <?php wp_reset_postdata(); ?>
+
+
+
+
+    <ul class="shops">
+      <!----------------------------
+      /////// 使用するページの要素を取得するphp
+      ----------------------------->
+      <?php
+      // 記事が続く限り、でも４つまで
+      $shop_pages = get_child_pages(4, $shop_obj->ID);
+      if ($shop_pages->have_posts()) :
+        while ($shop_pages->have_posts()) : $shop_pages->the_post();
+      ?>
           <li class="shops-item">
             <a class="shop-link" href="<?php the_permalink(); ?>">
-              <div class="shop-image"><?php the_post_thumbnail( 'common' ); ?></div>
+              <div class="shop-image"><?php the_post_thumbnail('common'); ?></div>
               <div class="shop-body">
+                <!-- ❶タイトル -->
                 <p class="name"><?php the_title(); ?></p>
-                <p class="location"><?php the_field( 'location' ); ?></p>
+                <!-- 引数：❷ACFのフィールド名 -->
+                <p class="location"><?php the_field('location'); ?></p>
                 <div class="buttonBox">
                   <button type="button" class="seeDetail">MORE</button>
                 </div>
               </div>
             </a>
           </li>
-<?php
-	endwhile;
-	wp_reset_postdata();
-endif;
-?>
-        </ul>
-        <div class="section-buttons">
-          <button type="button" class="button button-ghost" onclick="javascript:location.href = '<?php echo esc_url( home_url( 'shop' ) ); ?>';">
-            <?php echo $shop_title; ?>一覧を見る
-          </button>
-        </div>
-      </div>
-    </section>
-    <section class="section-contents" id="contribution">
-      <div class="wrapper">
-<?php
-$contribution_obj = get_page_by_path( 'contribution' );
-$post = $contribution_obj;
-setup_postdata( $post );
-$contribution_title = get_the_title();
-?>
-        <span class="section-title-en"><?php the_field( 'english_title' ); ?></span>
-        <h2 class="section-title"><?php the_title(); ?></h2>
-        <p class="section-lead"><?php echo get_the_excerpt(); ?></p>
-<?php wp_reset_postdata(); ?>
-        <div class="articles">
-<?php
-$contribution_pages = get_specific_posts( 'daily_contribution', 'event', '', 3 );
-if ( $contribution_pages->have_posts() ) :
-	while ( $contribution_pages->have_posts() ) : $contribution_pages->the_post();
-?>
+          <!-- ❸投稿表示ループ終わりの宣言 -->
+      <?php
+        endwhile;
+        wp_reset_postdata();
+      endif;
+      ?>
+    </ul> <!--ulここまで-->
+
+
+
+    <div class="section-buttons">
+      <button type="button" class="button button-ghost" onclick="javascript:location.href = '<?php echo esc_url(home_url('shop')); ?>';">
+        <?php echo $shop_title; ?>一覧を見る
+      </button>
+    </div>
+  </div>
+</section>
+<section class="section-contents" id="contribution">
+  <div class="wrapper">
+    <?php
+    $contribution_obj = get_page_by_path('contribution');
+    $post = $contribution_obj;
+    setup_postdata($post);
+    $contribution_title = get_the_title();
+    ?>
+    <span class="section-title-en"><?php the_field('english_title'); ?></span>
+    <h2 class="section-title"><?php the_title(); ?></h2>
+    <p class="section-lead"><?php echo get_the_excerpt(); ?></p>
+    <?php wp_reset_postdata(); ?>
+    <div class="articles">
+      <?php
+      $contribution_pages = get_specific_posts('daily_contribution', 'event', '', 3);
+      if ($contribution_pages->have_posts()) :
+        while ($contribution_pages->have_posts()) : $contribution_pages->the_post();
+      ?>
           <article class="article-card">
             <a class="card-link" href="<?php the_permalink(); ?>">
               <div class="card-inner">
-                <div class="card-image"><?php the_post_thumbnail( 'front-contribution' ); ?></div>
+                <div class="card-image"><?php the_post_thumbnail('front-contribution'); ?></div>
                 <div class="card-body">
                   <p class="title"><?php the_title(); ?></p>
                   <p class="excerpt"><?php echo get_the_excerpt(); ?></p>
@@ -74,128 +107,128 @@ if ( $contribution_pages->have_posts() ) :
               </div>
             </a>
           </article>
-<?php
-	endwhile;
-	wp_reset_postdata();
-endif;
-?>
-        </div>
-        <div class="section-buttons">
-          <button type="button" class="button button-ghost" onclick="javascript:location.href = '<?php echo esc_url( home_url( 'contribution' ) ); ?>';">
-            <?php echo $contribution_title; ?>一覧を見る
-          </button>
+      <?php
+        endwhile;
+        wp_reset_postdata();
+      endif;
+      ?>
+    </div>
+    <div class="section-buttons">
+      <button type="button" class="button button-ghost" onclick="javascript:location.href = '<?php echo esc_url(home_url('contribution')); ?>';">
+        <?php echo $contribution_title; ?>一覧を見る
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="section-contents" id="news">
+  <div class="wrapper">
+    <?php $term_obj = get_term_by('slug', 'news', 'category'); ?>
+    <span class="section-title-en"><?php the_field('english_title'); ?></span>
+    <h2 class="section-title"><?php echo $term_obj->name; ?></h2>
+    <p class="section-lead"><?php echo $term_obj->description; ?></p>
+    <ul class="news">
+      <?php
+      $news_posts = get_specific_posts('post', 'category', 'news', 3);
+      if ($news_posts->have_posts()):
+        while ($news_posts->have_posts()): $news_posts->the_post();
+      ?>
+          <li class="news-item">
+            <a class="detail-link" href="<?php the_permalink(); ?>">
+              <time class="time"><?php the_time('Y.m.d'); ?></time>
+              <p class="title"><?php the_title(); ?></p>
+              <p class="news-text"><?php echo get_the_excerpt(); ?></p>
+            </a>
+          </li>
+      <?php
+        endwhile;
+        wp_reset_postdata();
+      endif;
+      ?>
+    </ul>
+    <div class="section-buttons">
+      <button type="button" class="button button-ghost" onclick="javascript:location.href = '<?php echo esc_url(get_term_link($term_obj)); ?>';">
+        <?php echo $term_obj->name; ?>一覧を見る
+      </button>
+    </div>
+  </div>
+</section>
+<!-- news test -->
+<section class="section-contents" id="news">
+  <div class="wrapper">
+    <?php $term_obj = get_term_by('slug', 'news', 'category'); ?>
+    <span class="section-title-en"><?php the_field('english_title'); ?></span>
+    <h2 class="section-title"><?php echo $term_obj->name; ?></h2>
+    <p class="section-lead"><?php echo $term_obj->description; ?></p>
+    <!-- ||| -->
+    <div class="page-inner full-width">
+      <div class="page-main" id="pg-news">
+        <div class="main-container">
+          <div class="main-wrapper">
+            <div class="newsLists">
+              <?php
+              if (have_posts()):
+                while (have_posts()) : the_post();
+                  get_template_part('content-archive');
+                endwhile;
+              endif;
+              ?>
+            </div>
+            <div class="pager">
+              <ul class="pagerList">
+                <?php
+                page_navi();
+                ?>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section class="section-contents" id="news">
-      <div class="wrapper">
-<?php $term_obj = get_term_by( 'slug', 'news', 'category' ); ?>
-        <span class="section-title-en"><?php the_field( 'english_title' ); ?></span>
-        <h2 class="section-title"><?php echo $term_obj->name; ?></h2>
-        <p class="section-lead"><?php echo $term_obj->description; ?></p>
-        <ul class="news">
+
+    <!-- <ul class="news">
 <?php
-$news_posts = get_specific_posts( 'post', 'category', 'news', 3 );
-if( $news_posts->have_posts() ):
-	while( $news_posts->have_posts() ): $news_posts->the_post();
+$news_posts = get_specific_posts('post', 'category', 'news', 5);
+if ($news_posts->have_posts()):
+  while ($news_posts->have_posts()): $news_posts->the_post();
 ?>
           <li class="news-item">
             <a class="detail-link" href="<?php the_permalink(); ?>">
-              <time class="time"><?php the_time( 'Y.m.d' ); ?></time>
+              <time class="time"><?php the_time('Y.m.d'); ?></time>
               <p class="title"><?php the_title(); ?></p>
               <p class="news-text"><?php echo get_the_excerpt(); ?></p>
             </a>
           </li>
 <?php
-	endwhile;
-	wp_reset_postdata();
-endif;
-?>
-        </ul>
-        <div class="section-buttons">
-          <button type="button" class="button button-ghost" onclick="javascript:location.href = '<?php echo esc_url( get_term_link( $term_obj ) ); ?>';">
-            <?php echo $term_obj->name; ?>一覧を見る
-          </button>
-        </div>
-      </div>
-    </section>
-    <!-- news test -->
-    <section class="section-contents" id="news">
-      <div class="wrapper">
-<?php $term_obj = get_term_by( 'slug', 'news', 'category' ); ?>
-        <span class="section-title-en"><?php the_field( 'english_title' ); ?></span>
-        <h2 class="section-title"><?php echo $term_obj->name; ?></h2>
-        <p class="section-lead"><?php echo $term_obj->description; ?></p>
-        <!-- ||| -->
-        <div class="page-inner full-width">
-                <div class="page-main" id="pg-news">
-                  <div class="main-container">
-                    <div class="main-wrapper">
-                      <div class="newsLists">
-<?php
-if ( have_posts() ):
-	while ( have_posts() ) : the_post();
-		get_template_part( 'content-archive' );
-	endwhile;
-endif;
-?>
-                      </div>
-                      <div class="pager">
-                        <ul class="pagerList">
-<?php
-page_navi();
-?>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-
-        <!-- <ul class="news">
-<?php
-$news_posts = get_specific_posts( 'post', 'category', 'news', 5 );
-if( $news_posts->have_posts() ):
-	while( $news_posts->have_posts() ): $news_posts->the_post();
-?>
-          <li class="news-item">
-            <a class="detail-link" href="<?php the_permalink(); ?>">
-              <time class="time"><?php the_time( 'Y.m.d' ); ?></time>
-              <p class="title"><?php the_title(); ?></p>
-              <p class="news-text"><?php echo get_the_excerpt(); ?></p>
-            </a>
-          </li>
-<?php
-	endwhile;
-	wp_reset_postdata();
+  endwhile;
+  wp_reset_postdata();
 endif;
 ?>
         </ul> -->
-        <div class="section-buttons">
-          <button type="button" class="button button-ghost" onclick="javascript:location.href = '<?php echo esc_url( get_term_link( $term_obj ) ); ?>';">
-            <?php echo $term_obj->name; ?>一覧を見る
-          </button>
-        </div>
-      </div>
-    </section>
-    <section class="section-contents" id="company">
-      <div class="wrapper">
-<?php
-$company_page = get_page_by_path( 'company' );
-$post = $company_page;
-setup_postdata( $post );
-?>
-        <span class="section-title-en"><?php the_field( 'english_title' ); ?></span>
-        <h2 class="section-title"><?php the_title(); ?></h2>
-        <p class="section-lead"><?php echo get_the_excerpt(); ?></p>
-        <div class="section-buttons">
-          <button type="button" class="button button-ghost" onclick="javascript:location.href = '<?php echo esc_url( home_url( 'company' ) ); ?>';">
-            <?php the_title(); ?>一覧を見る
-          </button>
-        </div>
-<?php wp_reset_postdata(); ?>
-      </div>
-    </section>
+    <div class="section-buttons">
+      <button type="button" class="button button-ghost" onclick="javascript:location.href = '<?php echo esc_url(get_term_link($term_obj)); ?>';">
+        <?php echo $term_obj->name; ?>一覧を見る
+      </button>
+    </div>
+  </div>
+</section>
+<section class="section-contents" id="company">
+  <div class="wrapper">
+    <?php
+    $company_page = get_page_by_path('company');
+    $post = $company_page;
+    setup_postdata($post);
+    ?>
+    <span class="section-title-en"><?php the_field('english_title'); ?></span>
+    <h2 class="section-title"><?php the_title(); ?></h2>
+    <p class="section-lead"><?php echo get_the_excerpt(); ?></p>
+    <div class="section-buttons">
+      <button type="button" class="button button-ghost" onclick="javascript:location.href = '<?php echo esc_url(home_url('company')); ?>';">
+        <?php the_title(); ?>一覧を見る
+      </button>
+    </div>
+    <?php wp_reset_postdata(); ?>
+  </div>
+</section>
 <?php get_footer(); ?>
