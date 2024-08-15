@@ -48,6 +48,7 @@
         </div>
       </div>
     </header>
+    <!-- front-page.phpの場合 -->
     <?php if (is_front_page()): ?>
       <section class="section-contents" id="keyvisual">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-section-keyvisual.jpg" alt="">
@@ -62,7 +63,8 @@
           <main>
             <div class="page-contents">
               <div class="page-head">
-                <?php echo get_main_image(); ?>
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-page-dummy.png" alt="">
+
                 <div class="wrapper">
                   <span class="page-title-en"><?php echo get_main_en_title(); ?></span>
                   <h2 class="page-title"><?php echo get_main_title(); ?></h2>
