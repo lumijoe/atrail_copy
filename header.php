@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="keywords" content="共通キーワード" />
-  <meta name="description" content="<?php bloginfo( 'description' ); ?>" />
-  <title><?php bloginfo( 'name' ); ?></title>
-  <link rel="shortcut icon" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/common/favicon.ico" />
+  <meta name="description" content="<?php bloginfo('description'); ?>" />
+  <title><?php bloginfo('name'); ?></title>
+  <link rel="shortcut icon" href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/common/favicon.ico" />
   <link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Vollkorn:400i" rel="stylesheet" />
-<?php wp_head(); ?>
+  <?php wp_head(); ?>
 </head>
+
 <body <?php body_class(); ?>>
   <div class="container">
     <header id="header">
       <div class="header-inner">
         <div class="logo">
-          <a class="logo-header" href="<?php echo esc_url( home_url() ); ?>">
-            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/common/logo.png" class="main-logo" alt="ATRAIL" />
-            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/common/logo.png" class="fixed-logo" alt="ATRAIL" />
+          <a class="logo-header" href="<?php echo esc_url(home_url()); ?>">
+            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/common/logo.png" class="main-logo" alt="ATRAIL" />
+            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/common/logo.png" class="fixed-logo" alt="ATRAIL" />
           </a>
         </div>
         <button class="toggle-menu js-toggoleNav">
@@ -26,14 +28,14 @@
         </button>
         <div class="header-nav">
           <nav class="global-nav">
-<?php
-wp_nav_menu([
-  'theme_location' => 'place_global',
-  'container' => false,
-]);
-?>
+            <?php
+            wp_nav_menu([
+              'theme_location' => 'place_global',
+              'container' => false,
+            ]);
+            ?>
           </nav>
-          <form class="search-form" role="search" method="get" action="<?php echo esc_url( home_url() ); ?>">
+          <form class="search-form" role="search" method="get" action="<?php echo esc_url(home_url()); ?>">
             <div class="search-box">
               <input type="text" class="search-input" name="s" placeholder="キーワードを入力してください" />
               <button type="submit" class="button-submit"></button>
@@ -46,32 +48,32 @@ wp_nav_menu([
         </div>
       </div>
     </header>
-<?php if( is_front_page() ): ?>
-    <section class="section-contents" id="keyvisual">
-	  <?php echo get_main_image(); ?>
-      <div class="wrapper">
-        <h1 class="site-title">Connecting the future.</h1>
-        <p class="site-caption"><?php echo get_the_excerpt(); ?></p>
-      </div>
-    </section>
-<?php else: ?>
+    <?php if (is_front_page()): ?>
+      <section class="section-contents" id="keyvisual">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-section-keyvisual.jpg" alt="">
+        <div class="wrapper">
+          <h1 class="site-title">Connecting the future.</h1>
+          <p class="site-caption">私たちパシフィックモール開発は<br>世界各地のショッピングモール開発を通じて<br>人と人、人と地域を結ぶお手伝いをしています。</p>
+        </div>
+      </section>
+    <?php else: ?>
       <div class="wrap">
         <div id="primary" class="content-area">
           <main>
-          <div class="page-contents">
-            <div class="page-head">
-			  <?php echo get_main_image(); ?>
-              <div class="wrapper">
-                <span class="page-title-en"><?php echo get_main_en_title(); ?></span>
-                <h2 class="page-title"><?php echo get_main_title(); ?></h2>
+            <div class="page-contents">
+              <div class="page-head">
+                <?php echo get_main_image(); ?>
+                <div class="wrapper">
+                  <span class="page-title-en"><?php echo get_main_en_title(); ?></span>
+                  <h2 class="page-title"><?php echo get_main_title(); ?></h2>
+                </div>
               </div>
-            </div>
-            <div class="page-container">
-              <div class="bread_crumb">
-<?php
-if ( function_exists('bcn_display') ){
-	bcn_display();
-}
-?>
-              </div>
-<?php endif; ?>
+              <div class="page-container">
+                <div class="bread_crumb">
+                  <?php
+                  if (function_exists('bcn_display')) {
+                    bcn_display();
+                  }
+                  ?>
+                </div>
+              <?php endif; ?>

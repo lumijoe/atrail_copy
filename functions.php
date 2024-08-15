@@ -52,7 +52,9 @@ function get_child_pages($number = -1, $specified_id = null)
 	$child_pages = new WP_Query($args);
 	return $child_pages;
 }
-
+// ///////////////////////////////
+// 固定ページの画像設定
+// ///////////////////////////////
 // アイキャッチ画像を利用できるようにする
 add_theme_support('post-thumbnails');
 
