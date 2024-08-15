@@ -64,6 +64,12 @@
     ?>
   </nav>
 </div>
+<p class="copyright">
+  <small class="copyright-text">&#169; ATRAIL</small>
+</p>
+
+<!-- nav btn -->
+
 <?php wp_footer(); ?>
 </body>
 
