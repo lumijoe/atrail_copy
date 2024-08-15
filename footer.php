@@ -54,7 +54,7 @@
 
 
 <!-- nav -->
-<div>
+<div class=l-nav>
   <nav class="global-nav nav-list">
     <?php
     wp_nav_menu([
@@ -63,10 +63,11 @@
     ]);
     ?>
   </nav>
+  <p class="copyright">
+    <small class="copyright-text">&#169; ATRAIL</small>
+  </p>
 </div>
-<p class="copyright">
-  <small class="copyright-text">&#169; ATRAIL</small>
-</p>
+
 
 <!-- nav btn -->
 
