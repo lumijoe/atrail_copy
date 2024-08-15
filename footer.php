@@ -1,18 +1,18 @@
-<?php if( ! is_front_page() ): ?>
+<!-- <?php if (! is_front_page()): ?>
         </div>
       </div>
     </main>
   </div>
 </div>
 <?php endif;
-if ( ! $footer_cache = get_transient( 'footer_cache' ) ):
-  ob_start();
+      if (! $footer_cache = get_transient('footer_cache')):
+        ob_start();
 ?>
     <footer class="footer" id="footer">
       <div class="footerContents">
         <div class="footerContents-contact">
           <div class="enterprise-logo">
-            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/svg/logo-footer.svg" alt="atrail" />
+            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/svg/logo-footer.svg" alt="atrail" />
           </div>
           <div class="enterprise-detail">
             <p class="name">ATRAIL</p>
@@ -25,10 +25,10 @@ if ( ! $footer_cache = get_transient( 'footer_cache' ) ):
         <div class="footerContents-sitemap">
           <nav class="footer-nav">
 <?php
-wp_nav_menu([
-  'theme_location' => 'place_footer',
-  'container' => false,
-]);
+        wp_nav_menu([
+          'theme_location' => 'place_footer',
+          'container' => false,
+        ]);
 ?>
 
           </nav>
@@ -44,13 +44,27 @@ wp_nav_menu([
       </p>
     </footer>
 <?php
-  $footer_cache = ob_get_clean();
-  set_transient( 'footer_cache', $footer_cache, 60 * 5 );
-else:
-  echo $footer_cache;
-endif;
+        $footer_cache = ob_get_clean();
+        set_transient('footer_cache', $footer_cache, 60 * 5);
+      else:
+        echo $footer_cache;
+      endif;
 ?>
-  </div><!-- /.container -->
+  </div>/.container -->
+
+
+<!-- nav -->
+<div>
+  <nav class="global-nav nav-list">
+    <?php
+    wp_nav_menu([
+      'theme_location' => 'place_global',
+      'container' => false,
+    ]);
+    ?>
+  </nav>
+</div>
 <?php wp_footer(); ?>
 </body>
+
 </html>

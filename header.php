@@ -27,14 +27,14 @@
           <span class="toggle-line">メニュー</span>
         </button>
         <div class="header-nav">
-          <nav class="global-nav">
+          <!-- <nav class="global-nav">
             <?php
             wp_nav_menu([
               'theme_location' => 'place_global',
               'container' => false,
             ]);
             ?>
-          </nav>
+          </nav> -->
           <form class="search-form" role="search" method="get" action="<?php echo esc_url(home_url()); ?>">
             <div class="search-box">
               <input type="text" class="search-input" name="s" placeholder="キーワードを入力してください" />
@@ -51,10 +51,10 @@
     <!-- front-page.phpの場合 -->
     <?php if (is_front_page()): ?>
       <section class="section-contents" id="keyvisual">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-section-keyvisual.jpg" alt="">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-page-dummy.png" alt="">
         <div class="wrapper">
-          <h1 class="site-title">Connecting the future.</h1>
-          <p class="site-caption">私たちパシフィックモール開発は<br>世界各地のショッピングモール開発を通じて<br>人と人、人と地域を結ぶお手伝いをしています。</p>
+          <h1 class="site-title">Your Life Style</h1>
+          <p class="site-caption">(ダミー)自由な発想の建物で<br>暮らしに自由を</p>
         </div>
       </section>
     <?php else: ?>

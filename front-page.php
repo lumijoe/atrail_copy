@@ -1,4 +1,19 @@
 <?php get_header(); ?>
+<!-- nav -->
+<div>
+  <nav class="global-nav nav-list">
+    <?php
+    wp_nav_menu([
+      'theme_location' => 'place_global',
+      'container' => false,
+    ]);
+    ?>
+  </nav>
+</div>
+
+
+
+
 <!-- ------------------------------
 //////////// 店舗情報 shop
 ------------------------------- -->
@@ -65,9 +80,6 @@
       endif;
       ?>
     </ul> <!--ulここまで-->
-
-
-
     <div class="section-buttons">
       <button type="button" class="button button-ghost" onclick="javascript:location.href = '<?php echo esc_url(home_url('shop')); ?>';">
         <?php echo $shop_title; ?>一覧を見る
@@ -122,8 +134,14 @@
     </div>
   </div>
 </section>
-
-<section class="section-contents" id="news">
+<!-- cta -->
+<section class="l-cta">
+  <button class="p-cta-btn">
+    <a href="#contact">お問い合わせ→</a>
+  </button>
+</section>
+<!-- お知らせ -->
+<!-- <section class="section-contents" id="news">
   <div class="wrapper">
     <?php $term_obj = get_term_by('slug', 'news', 'category'); ?>
     <span class="section-title-en"><?php the_field('english_title'); ?></span>
@@ -154,7 +172,8 @@
       </button>
     </div>
   </div>
-</section>
+</section> -->
+
 <!-- news test -->
 <section class="section-contents" id="news">
   <div class="wrapper">
@@ -189,12 +208,12 @@
     </div>
 
 
-    <!-- <ul class="news">
-<?php
-$news_posts = get_specific_posts('post', 'category', 'news', 5);
-if ($news_posts->have_posts()):
-  while ($news_posts->have_posts()): $news_posts->the_post();
-?>
+    <ul class="news">
+      <?php
+      $news_posts = get_specific_posts('post', 'category', 'news', 5);
+      if ($news_posts->have_posts()):
+        while ($news_posts->have_posts()): $news_posts->the_post();
+      ?>
           <li class="news-item">
             <a class="detail-link" href="<?php the_permalink(); ?>">
               <time class="time"><?php the_time('Y.m.d'); ?></time>
@@ -202,12 +221,12 @@ if ($news_posts->have_posts()):
               <p class="news-text"><?php echo get_the_excerpt(); ?></p>
             </a>
           </li>
-<?php
-  endwhile;
-  wp_reset_postdata();
-endif;
-?>
-        </ul> -->
+      <?php
+        endwhile;
+        wp_reset_postdata();
+      endif;
+      ?>
+    </ul>
     <div class="section-buttons">
       <button type="button" class="button button-ghost" onclick="javascript:location.href = '<?php echo esc_url(get_term_link($term_obj)); ?>';">
         <?php echo $term_obj->name; ?>一覧を見る
