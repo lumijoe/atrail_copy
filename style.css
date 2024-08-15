@@ -190,8 +190,7 @@ html {
 
 body {
   font-size: 1.4rem;
-  font-family: "Hiragino Kaku Gothic ProN", Meiryo,
-    sans-serif;
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
   font-weight: 400;
   line-height: 1.76;
   letter-spacing: 1px;
@@ -223,8 +222,7 @@ ul {
 }
 
 button {
-  font-family: "Hiragino Kaku Gothic ProN", Meiryo,
-    sans-serif;
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
   background: transparent;
   border: none;
   border-radius: 0;
@@ -4191,10 +4189,13 @@ input {
 }
 
 .buttonBox .seeDetail {
-  padding-right: 74px;
   font-size: 1.4rem;
-  font-family: "Vollkorn", serif;
+  font-family: "Noto Sans Japanese", sans-serif;
   position: relative;
+  background-color: black;
+  color: #fff;
+  width: 100px;
+  height: 24px;
 }
 
 .buttonBox .seeDetail::after {
