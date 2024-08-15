@@ -5,7 +5,7 @@
                           <p class="title"><?php the_title(); ?></p>
                           <p class="excerpt"><?php echo get_the_excerpt(); ?></p>
                           <div class="buttonBox">
-                            <button type="button" class="seeDetail">MORE</button>
+                            <button type="button" class="seeDetail">詳しくは→</button>
                           </div>
                         </div>
                       </a>

@@ -61,11 +61,11 @@ add_theme_support('post-thumbnails');
 // トップページのメイン画像用のサイズ設定
 add_image_size('top', 1077, 622, true);
 
-// 地域貢献活動一覧画像用のサイズ設定
+// 施工事例一覧画像用のサイズ設定
 add_image_size('contribution', 557, 280, true);
 
-// トップページの地域貢献活動にて使用している画像用のサイズ設定
-add_image_size('front-contribution', 255, 189, true);
+// トップページの施工事例にて使用している画像用のサイズ設定
+add_image_size('front-contribution', 295, 295, true);
 
 // 企業情報・店舗情報一覧画像用のサイズ設定
 add_image_size('common', 465, 252, true);

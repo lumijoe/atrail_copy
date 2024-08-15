@@ -53,7 +53,7 @@
                 <!-- 引数：❷ACFのフィールド名 -->
                 <p class="location"><?php the_field('location'); ?></p>
                 <div class="buttonBox">
-                  <button type="button" class="seeDetail">MORE</button>
+                  <button type="button" class="seeDetail">詳しくは→</button>
                 </div>
               </div>
             </a>
@@ -101,7 +101,7 @@
                   <p class="title"><?php the_title(); ?></p>
                   <p class="excerpt"><?php echo get_the_excerpt(); ?></p>
                   <div class="buttonBox">
-                    <button type="button" class="seeDetail">MORE</button>
+                    <button type="button" class="seeDetail">詳しくは→</button>
                   </div>
                 </div>
               </div>
@@ -113,6 +113,8 @@
       endif;
       ?>
     </div>
+
+    <!-- 施工事例 -->
     <div class="section-buttons">
       <button type="button" class="button button-ghost" onclick="javascript:location.href = '<?php echo esc_url(home_url('contribution')); ?>';">
         <?php echo $contribution_title; ?>一覧を見る
