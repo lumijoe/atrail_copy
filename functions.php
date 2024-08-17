@@ -15,9 +15,14 @@ function my_login_logo()
 { 	?>
 		<style type="text/css">
 			#login h1 a, .login h1 a {
-				background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/head-logo.png);
+				background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/common/head-logo.svg);
 			}
 		</style>
+		<script type="text/javascript">
+        	document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('#login h1 a').setAttribute('href', 'https://lkcodetest.sakura.ne.jp/atrail/');
+        	});
+    	</script>
 	<?php
 }
 add_action('login_enqueue_scripts', 'my_login_logo');
