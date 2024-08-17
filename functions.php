@@ -8,7 +8,23 @@ function my_enqueue_scripts()
 }
 add_action('wp_enqueue_scripts', 'my_enqueue_scripts');
 
+// ///////////////////////////////////
+// ログイン画面のカスタマイズ
+// ///////////////////////////////////
+function my_login_logo() 
+{ 	?>
+		<style type="text/css">
+			#login h1 a, .login h1 a {
+				background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/head-logo.png);
+			}
+		</style>
+	<?php
+}
+add_action('login_enqueue_scripts', 'my_login_logo');
+
+// ///////////////////////////////////
 // ヘッダー、フッターのカスタムメニュー化
+// ///////////////////////////////////
 register_nav_menus(array(
 	'place_global' => ' グローバル',
 	'place_footer' => ' フッターナビ',
