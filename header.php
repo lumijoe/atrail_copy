@@ -53,10 +53,11 @@
       <section class="section-contents" id="keyvisual">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-page-dummy.png" alt="">
         <div class="wrapper">
-          <h1 class="site-title">Your Life Style</h1>
+          <h1 class="site-title">Your Style</h1>
           <p class="site-caption">(ダミー)自由な発想の建物で<br>暮らしに自由を</p>
         </div>
       </section>
+      <!-- front-page.php以外のphpページの場合 -->
     <?php else: ?>
       <div class="wrap">
         <div id="primary" class="content-area">
