@@ -11,19 +11,23 @@ add_action('wp_enqueue_scripts', 'my_enqueue_scripts');
 // ///////////////////////////////////
 // ログイン画面のカスタマイズ
 // ///////////////////////////////////
-function my_login_logo() 
+function my_login_logo()
 { 	?>
-		<style type="text/css">
-			#login h1 a, .login h1 a {
-				background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/common/head-logo.svg);
-			}
-		</style>
-		<script type="text/javascript">
-        	document.addEventListener('DOMContentLoaded', function() {
-            document.querySelector('#login h1 a').setAttribute('href', 'https://lkcodetest.sakura.ne.jp/atrail/');
-        	});
-    	</script>
-	<?php
+	<style type="text/css">
+		#login h1 a,
+		.login h1 a {
+			background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/common/head-logo.svg);
+			width: 120px;
+			height: 80px;
+			background-size: 120px;
+		}
+	</style>
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function() {
+			document.querySelector('#login h1 a').setAttribute('href', 'https://lkcodetest.sakura.ne.jp/atrail/');
+		});
+	</script>
+<?php
 }
 add_action('login_enqueue_scripts', 'my_login_logo');
 
@@ -34,8 +38,9 @@ register_nav_menus(array(
 	'place_global' => ' グローバル',
 	'place_footer' => ' フッターナビ',
 ));
-
+// ////////////////////////////////////
 // メイン画像上にテンプレートごとの文字列を表示
+// ////////////////////////////////////
 function get_main_title()
 {
 	if (is_singular('post')) :
