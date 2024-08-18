@@ -397,10 +397,14 @@ form
   text-overflow: ellipsis;
   width: auto;
   height: 38px;
+  border: 1px solid #9e9e9e;
+  border-radius: 4px;
 }
 .l-contact .l-form .form-example .form_input--freetxt {
   height: 138px;
   width: 100%;
+  border: 1px solid #9e9e9e;
+  border-radius: 4px;
 }
 .py25 {
   padding-top: 25px;
@@ -422,7 +426,10 @@ form
   display: flex;
   justify-content: center;
 }
-
+.btn-center {
+  display: flex;
+  justify-content: center;
+}
 @-webkit-keyframes menu-barTop {
   0% {
     -webkit-transform: translateY(7px) rotate(45deg);

@@ -120,3 +120,115 @@ define('WPCF7_AUTOP', false);
 require_once(ABSPATH . 'wp-settings.php');
 
 p タグ不要の追加
+
+## form
+
+<!-- <section class="l-contact" id="contact">
+  <div class="l-contact-inner l-section-inner-plf--20px l-section-inner">
+    <h3 class="p-section_ttl--pb32">お問い合わせ</h3>
+    <div class="p-section_ttlborder"></div>
+    <p>ご質問などがございましたら、下記の《お問い合わせフォーム》へご入力ください。</p>
+    <div class="l-form">
+      <div class="l-form-inner">
+
+        <form action="" method="get" class="form-example-box">
+          <div class="form-example">
+            <label for="name" class="form_label">お名前</label>
+            <input type="text" name="name" id="name" required class="form_input" />
+          </div>
+          <div class="form-example">
+            <label for="email" class="form_label">メールアドレス</label>
+            <input type="email" name="email" id="email" required class="form_input" />
+          </div>
+          <div class="form-example">
+            <label for="tel" class="form_label">電話番号</label>
+            <input type="tel" name="tel" id="tel" required class="form_input" />
+          </div>
+          <div class="form-example">
+            <label for="textcontent" class="form_label">お問い合わせ内容</label>
+            <input type="text" name="textcontent" id="textcontent" required class="form_input--freetxt" />
+          </div>
+          <div class="py25 l-flex-center">
+            <input type="checkbox" id="privacy-policy" name="privacy-policy" required>
+            <label for="privacy-policy">プライバシーポリシーに同意する</label>
+          </div>
+          <div class="form-example">
+            <input type="submit" value="入力内容を確認する" class="btn-submit" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="l-contact" id="contact">
+  <div class="l-contact-inner l-section-inner-plf--20px l-section-inner">
+    <h3 class="p-section_ttl--pb32">お問い合わせ</h3>
+    <div class="p-section_ttlborder"></div>
+    <p>ご質問などがございましたら、下記の《お問い合わせフォーム》へご入力ください。</p>
+    <div class="l-form">
+      <div class="l-form-inner">
+        <form action="" method="get" class="form-example-box">
+          <div class="form-example">
+            <label for="name" class="form_label">お名前</label>
+            <input type="text" name="name" id="name" required class="form_input" />
+          </div>
+          <div class="form-example">
+            <label for="email" class="form_label">メールアドレス</label>
+            <input type="email" name="email" id="email" required class="form_input" />
+          </div>
+          <div class="form-example">
+            <label for="tel" class="form_label">電話番号</label>
+            <input type="tel" name="tel" id="tel" required class="form_input" />
+          </div>
+          <div class="form-example">
+            <label for="textcontent" class="form_label">お問い合わせ内容</label>
+            <input type="text" name="textcontent" id="textcontent" required class="form_input--freetxt" />
+          </div>
+          <div class="py25 l-flex-center">
+            <input type="checkbox" id="privacy-policy" name="privacy-policy" required>
+            <label for="privacy-policy">プライバシーポリシーに同意する</label>
+          </div>
+          <div class="form-example">
+            <input type="submit" value="入力内容を確認する" class="btn-submit" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+## form
+
+<section class="l-contact" id="contact">
+  <div class="l-contact-inner l-section-inner-plf--20px l-section-inner">
+    <h3 class="p-section_ttl--pb32">お問い合わせ</h3>
+    <div class="p-section_ttlborder"></div>
+<p>ご質問などがございましたら、下記の《お問い合わせフォーム》へご入力ください。</p>
+    <div class="l-form">
+      <div class="l-form-inner">
+          <div class="form-example">
+            <label for="name" class="form_label">お名前</label>
+            [mwform_text name="your-name" id="your-name" class="form_input" placeholder="山田太郎" size="none"]
+          </div>
+　　　　　　<div class="form-example">
+            <label for="email" class="form_label">メールアドレス</label>
+            [mwform_email name="your-email" id="your-email" class="form_input" placeholder="xxx@xxxx.com" size="none"]
+          </div>
+          <div class="form-example">
+            <label for="tel" class="form_label">電話番号</label>
+            [mwform_tel name="your-tel" id="your-tel" class="form_input" placeholder="000-0000-0000" size="none"]
+          </div>
+          <div class="form-example">
+            <label for="textcontent" class="form_label">お問い合わせ内容</label>
+            [mwform_textarea name="your-textcontent" id="your-textcontent" class="form_input--freetxt" size="none"]
+          </div>
+          <div class="py25 l-flex-center">
+            [mwform_checkbox name="privacy-policy" id="privacy-policy" children="プライバシーポリシーに同意する"]
+          </div>
+          <div class="form-example btn-center">
+            [mwform_submitButton name="btn_confirmsubmit" confirm_value="確認画面へ" submit_value="送信する"]
+          </div>
+      </div>
+    </div>
+  </div>
+</section>

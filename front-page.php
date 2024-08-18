@@ -138,7 +138,7 @@
 <!-- cta -->
 <section class="l-cta">
   <button class="p-cta-btn">
-    <a href="#contact">お問い合わせ→</a>
+    <a href="https://lkcodetest.sakura.ne.jp/atrail/contact">お問い合わせ→</a>
   </button>
 </section>
 
@@ -253,78 +253,7 @@
 <!----------------------------------
         form
 ----------------------------------->
-<section class="l-contact" id="contact">
-  <div class="l-contact-inner l-section-inner-plf--20px l-section-inner">
-    <h3 class="p-section_ttl--pb32">お問い合わせ</h3>
-    <div class="p-section_ttlborder"></div>
-    <p>ご質問などがございましたら、下記の《お問い合わせフォーム》へご入力ください。</p>
-    <div class="l-form">
-      <div class="l-form-inner">
-        <form action="" method="get" class="form-example-box">
-          <div class="form-example">
-            <label for="name" class="form_label">お名前</label>
-            <input type="text" name="name" id="name" required class="form_input" />
-          </div>
-          <div class="form-example">
-            <label for="email" class="form_label">メールアドレス</label>
-            <input type="email" name="email" id="email" required class="form_input" />
-          </div>
-          <div class="form-example">
-            <label for="tel" class="form_label">電話番号</label>
-            <input type="tel" name="tel" id="tel" required class="form_input" />
-          </div>
-          <div class="form-example">
-            <label for="textcontent" class="form_label">お問い合わせ内容</label>
-            <input type="text" name="textcontent" id="textcontent" required class="form_input--freetxt" />
-          </div>
-          <div class="py25 l-flex-center">
-            <input type="checkbox" id="privacy-policy" name="privacy-policy" required>
-            <label for="privacy-policy">プライバシーポリシーに同意する</label>
-          </div>
-          <div class="form-example">
-            <input type="submit" value="入力内容を確認する" class="btn-submit" />
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="l-contact" id="contact">
-  <div class="l-contact-inner l-section-inner-plf--20px l-section-inner">
-    <h3 class="p-section_ttl--pb32">お問い合わせ</h3>
-    <div class="p-section_ttlborder"></div>
-    <p>ご質問などがございましたら、下記の《お問い合わせフォーム》へご入力ください。</p>
-    <div class="l-form">
-      <div class="l-form-inner">
-        <form action="" method="get" class="form-example-box">
-          <div class="form-example">
-            <label for="name" class="form_label">お名前</label>
-            <input type="text" name="name" id="name" required class="form_input" />
-          </div>
-          <div class="form-example">
-            <label for="email" class="form_label">メールアドレス</label>
-            <input type="email" name="email" id="email" required class="form_input" />
-          </div>
-          <div class="form-example">
-            <label for="tel" class="form_label">電話番号</label>
-            <input type="tel" name="tel" id="tel" required class="form_input" />
-          </div>
-          <div class="form-example">
-            <label for="textcontent" class="form_label">お問い合わせ内容</label>
-            <input type="text" name="textcontent" id="textcontent" required class="form_input--freetxt" />
-          </div>
-          <div class="py25 l-flex-center">
-            <input type="checkbox" id="privacy-policy" name="privacy-policy" required>
-            <label for="privacy-policy">プライバシーポリシーに同意する</label>
-          </div>
-          <div class="form-example">
-            <input type="submit" value="入力内容を確認する" class="btn-submit" />
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
+<?php echo apply_shortcodes('[mwform_formkey key="263"]'); ?>
 
 
 
