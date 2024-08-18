@@ -96,3 +96,27 @@
     </div>
   </div>
 </section> -->
+
+## wp-config.php
+
+/\*\*
+
+- 開発者へ: WordPress デバッグモード
+-
+- この値を true にすると、開発中に注意 (notice) を表示します。
+- テーマおよびプラグインの開発者には、その開発環境においてこの WP_DEBUG を使用することを強く推奨します。
+  \*/
+  define('WP_DEBUG', false);
+
+/_ 編集が必要なのはここまでです ! WordPress でブログをお楽しみください。 _/
+
+/** Absolute path to the WordPress directory. \*/
+if (!defined('ABSPATH'))
+define('ABSPATH', dirname(**FILE**) . '/');
+/** コンタクトフォームの P タグ不要 \*/
+define('WPCF7_AUTOP', false);
+
+/\*_ Sets up WordPress vars and included files. _/
+require_once(ABSPATH . 'wp-settings.php');
+
+p タグ不要の追加
