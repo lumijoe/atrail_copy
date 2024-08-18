@@ -145,104 +145,8 @@
 
 
 <!-- お知らせ -->
-<!-- <section class="section-contents" id="news">
-  <div class="wrapper">
-    <?php $term_obj = get_term_by('slug', 'news', 'category'); ?>
-    <span class="section-title-en"><?php the_field('english_title'); ?></span>
-    <h2 class="section-title"><?php echo $term_obj->name; ?></h2>
-    <p class="section-lead"><?php echo $term_obj->description; ?></p>
-    <ul class="news">
-      <?php
-      $news_posts = get_specific_posts('post', 'category', 'news', 3);
-      if ($news_posts->have_posts()):
-        while ($news_posts->have_posts()): $news_posts->the_post();
-      ?>
-          <li class="news-item">
-            <a class="detail-link" href="<?php the_permalink(); ?>">
-              <time class="time"><?php the_time('Y.m.d'); ?></time>
-              <p class="title"><?php the_title(); ?></p>
-              <p class="news-text"><?php echo get_the_excerpt(); ?></p>
-            </a>
-          </li>
-      <?php
-        endwhile;
-        wp_reset_postdata();
-      endif;
-      ?>
-    </ul>
-    <div class="section-buttons">
-      <button type="button" class="button button-ghost" onclick="javascript:location.href = '<?php echo esc_url(get_term_link($term_obj)); ?>';">
-        <?php echo $term_obj->name; ?>一覧を見る
-      </button>
-    </div>
-  </div>
-</section> -->
-
-<!-- news test -->
-<!-- <section class="section-contents" id="news">
-  <div class="wrapper">
-    <?php $term_obj = get_term_by('slug', 'news', 'category'); ?>
-    <span class="section-title-en"><?php the_field('english_title'); ?></span>
-    <h2 class="section-title"><?php echo $term_obj->name; ?></h2>
-    <p class="section-lead"><?php echo $term_obj->description; ?></p> -->
-<!-- ||| -->
-<!-- <div class="page-inner full-width">
-      <div class="page-main" id="pg-news">
-        <div class="main-container">
-          <div class="main-wrapper">
-            <div class="newsLists">
-              <?php
-              if (have_posts()):
-                while (have_posts()) : the_post();
-                  get_template_part('content-archive');
-                endwhile;
-              endif;
-              ?>
-            </div>
-            <div class="pager">
-              <ul class="pagerList">
-                <?php
-                page_navi();
-                ?>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <ul class="news">
-      <?php
-      $news_posts = get_specific_posts('post', 'category', 'news', 5);
-      if ($news_posts->have_posts()):
-        while ($news_posts->have_posts()): $news_posts->the_post();
-      ?>
-          <li class="news-item">
-            <a class="detail-link" href="<?php the_permalink(); ?>">
-              <time class="time"><?php the_time('Y.m.d'); ?></time>
-              <p class="title"><?php the_title(); ?></p>
-              <p class="news-text"><?php echo get_the_excerpt(); ?></p>
-            </a>
-          </li>
-      <?php
-        endwhile;
-        wp_reset_postdata();
-      endif;
-      ?>
-    </ul>
-    <div class="section-buttons">
-      <button type="button" class="button button-ghost" onclick="javascript:location.href = '<?php echo esc_url(get_term_link($term_obj)); ?>';">
-        <?php echo $term_obj->name; ?>一覧を見る
-      </button>
-    </div>
-  </div>
-</section> -->
-
-<!-- news testtest2 -->
-
 <section class="section-contents" id="news">
-  <div class="wrapper">
+  <div class="wrapper maxw600">
     <?php $term_obj = get_term_by('slug', 'news', 'category'); ?>
     <span class="section-title-en"><?php the_field('english_title'); ?></span>
     <h2 class="section-title"><?php echo $term_obj->name; ?></h2>
@@ -254,11 +158,11 @@
           <div class="main-wrapper">
             <div class="newsLists">
               <?php
-              $news_posts = get_specific_posts('post', 'category', 'news', 3);
+              $news_posts = get_specific_posts('post', 'category', 'news', 4);
               if ($news_posts->have_posts()):
                 while ($news_posts->have_posts()): $news_posts->the_post();
               ?>
-                  <div class="newsLists">
+                  <div>
                     <a class="news-link" href="<?php the_permalink(); ?>">
                       <div class=news-body>
                         <time class="release"><?php the_time('Y.m.d'); ?></time>
@@ -276,6 +180,13 @@
         </div>
       </div>
     </div>
+    <div class="pager">
+      <ul class="pagerList">
+        <?php
+        page_navi();
+        ?>
+      </ul>
+    </div>
   </div>
 
   <div class="section-buttons">
@@ -289,8 +200,11 @@
 
 
 <!-- 会社概要 -->
+<!----------------------------------
+        company
+----------------------------------->
 <section class="section-contents" id="company">
-  <div class="wrapper">
+  <div class="wrapper maxw600">
     <?php
     $company_page = get_page_by_path('company');
     $post = $company_page;
@@ -299,12 +213,83 @@
     <span class="section-title-en"><?php the_field('english_title'); ?></span>
     <h2 class="section-title"><?php the_title(); ?></h2>
     <p class="section-lead"><?php echo get_the_excerpt(); ?></p>
-    <div class="section-buttons">
-      <button type="button" class="button button-ghost" onclick="javascript:location.href = '<?php echo esc_url(home_url('company')); ?>';">
-        <?php the_title(); ?>一覧を見る
-      </button>
+    <div class="l-company-table">
+      <table>
+        <tr>
+          <th>社名</th>
+          <td>アトレイル株式会社</td>
+        </tr>
+        <tr>
+          <th>代表者</th>
+          <td>代表取締役 西田 博</td>
+        </tr>
+        <tr>
+          <th>本社所在地</th>
+          <td>〒663-8227 兵庫県西宮市今津出在家 6 番 1 号</td>
+        </tr>
+        <tr>
+          <th>TEL</th>
+          <td>00-0000-0000</td>
+        </tr>
+        <tr>
+          <th>資本金</th>
+          <td>1,000,000 円</td>
+        </tr>
+        <tr>
+          <th>設立</th>
+          <td>2023年</td>
+        </tr>
+        <tr>
+          <th>取引銀行</th>
+          <td>●●●●銀行 ●●支店</td>
+        </tr>
+      </table>
     </div>
-    <?php wp_reset_postdata(); ?>
   </div>
 </section>
+<!-- ↑ -->
+
+<!-- お問い合わせ -->
+<!----------------------------------
+        form
+----------------------------------->
+<section class="l-contact" id="contact">
+  <div class="l-contact-inner l-section-inner-plf--20px l-section-inner">
+    <h3 class="p-section_ttl--pb32">お問い合わせ</h3>
+    <div class="p-section_ttlborder"></div>
+    <p>ご質問などがございましたら、下記の《お問い合わせフォーム》へご入力ください。</p>
+    <div class="l-form">
+      <div class="l-form-inner">
+        <form action="" method="get" class="form-example-box">
+          <div class="form-example">
+            <label for="name" class="form_label">お名前</label>
+            <input type="text" name="name" id="name" required class="form_input" />
+          </div>
+          <div class="form-example">
+            <label for="email" class="form_label">メールアドレス</label>
+            <input type="email" name="email" id="email" required class="form_input" />
+          </div>
+          <div class="form-example">
+            <label for="tel" class="form_label">電話番号</label>
+            <input type="tel" name="tel" id="tel" required class="form_input" />
+          </div>
+          <div class="form-example">
+            <label for="textcontent" class="form_label">お問い合わせ内容</label>
+            <input type="text" name="textcontent" id="textcontent" required class="form_input--freetxt" />
+          </div>
+          <div class="py25 l-flex-center">
+            <input type="checkbox" id="privacy-policy" name="privacy-policy" required>
+            <label for="privacy-policy">プライバシーポリシーに同意する</label>
+          </div>
+          <div class="form-example">
+            <input type="submit" value="入力内容を確認する" class="btn-submit" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
 <?php get_footer(); ?>

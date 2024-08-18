@@ -242,7 +242,9 @@ a {
 input {
   border-radius: 0;
 }
-
+/* *************
+ナビゲーション
+*************** */
 .nav-list {
   padding-top: 25px;
 }
@@ -261,6 +263,9 @@ input {
   /* padding-left: 0px; */
   border-left: none;
 }
+/*************** 
+cta
+****************/
 .l-cta {
   width: 100%;
   color: #fff;
@@ -288,6 +293,136 @@ input {
   padding-top: 23px;
   padding-bottom: 10px;
 }
+/****************
+news
+****************/
+.news-body {
+  height: 52px;
+}
+.maxw600 {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.news-body .release {
+  width: 38% !important;
+  text-align: justify;
+}
+.news-body .title {
+  width: 62% !important;
+  text-align: justify;
+}
+/*****************
+company
+*****************/
+.l-company-table {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 600px;
+}
+.l-company-table table {
+  max-width: 600px;
+  padding: 0;
+}
+.l-company-table tr {
+  display: flex;
+  align-items: center;
+  min-height: 52px;
+  height: auto;
+  border-top: 1px solid #9e9e9e;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0;
+}
+.l-company-table tr:last-child {
+  border-bottom: 1px solid #9e9e9e;
+}
+.l-company-table tr th {
+  flex: 0 0 100px;
+  text-align: left;
+  margin-right: 25px;
+  font-weight: 300;
+}
+.l-company-table tr td {
+  flex: 1;
+  text-align: left;
+  text-overflow: ellipsis;
+}
+/* *******************
+form
+*********************/
+
+.l-contact {
+  width: 100%;
+  height: auto;
+}
+.l-contact-inner {
+  padding-top: 60px;
+  padding-bottom: 23px;
+  text-align: center;
+}
+.l-contact .l-form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 600px;
+}
+.l-contact .l-form-inner {
+  max-width: 600px;
+  padding: 0;
+}
+.l-contact .l-form .form-example-box {
+  padding-bottom: 42px;
+}
+.l-contact .l-form .form-example {
+  display: flex;
+  align-items: center;
+  min-height: 38px;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 10px 0 0;
+}
+.l-contact .l-form .form-example:first-child {
+  padding-top: 0px;
+}
+.l-contact .l-form .form-example .form_label {
+  flex: 0 0 138px;
+  text-align: left;
+  margin-right: 60px;
+  font-weight: 300;
+}
+.l-contact .l-form .form-example .form_input {
+  flex: 1;
+  text-align: left;
+  text-overflow: ellipsis;
+  width: auto;
+  height: 38px;
+}
+.l-contact .l-form .form-example .form_input--freetxt {
+  height: 138px;
+  width: 100%;
+}
+.py25 {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.btn-submit {
+  height: 43px;
+  width: 179px;
+  border-radius: 60px;
+  background-color: black !important;
+  border: none;
+  color: #fff;
+  margin: 0 auto;
+  padding: 0 !important;
+}
+
+.l-flex-center {
+  display: flex;
+  justify-content: center;
+}
+
 @-webkit-keyframes menu-barTop {
   0% {
     -webkit-transform: translateY(7px) rotate(45deg);
@@ -2782,6 +2917,7 @@ input {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
+    height: auto;
   }
 
   #pg-news .newsLists .news-body .release {
@@ -3465,7 +3601,7 @@ input {
 .section-contents .section-title {
   margin-top: 12px;
   padding-bottom: 40px;
-  font-size: 3.8rem;
+  font-size: 3rem;
   font-family: "Noto Sans Japanese", sans-serif;
   font-weight: 400;
   line-height: 1;
