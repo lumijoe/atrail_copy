@@ -21,6 +21,7 @@
           <a class="logo-header" href="<?php echo esc_url(home_url()); ?>">
             <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/common/logo.png" class="main-logo" alt="ATRAIL" />
             <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/common/logo.png" class="fixed-logo" alt="ATRAIL" />
+            <p>アトレイル株式会社</p>
           </a>
         </div>
         <button class="toggle-menu js-toggoleNav">
