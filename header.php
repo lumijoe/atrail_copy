@@ -34,7 +34,7 @@
             <p>受付時間 / 9:00～18:00（水曜定休）</p>
           </div>
           <button class="mail">
-            <img src="./assets/images/common/icon-mail.png" alt="" srcset="">
+            <img src="https://lkcodetest.sakura.ne.jp/atrail/wp-content/uploads/images/common/icon-mail.png" alt="" srcset="">
           </button>
 
         </div>
