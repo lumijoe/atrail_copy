@@ -17,12 +17,26 @@
   <div class="container">
     <header id="header">
       <div class="header-inner">
-        <div class="logo">
-          <a class="logo-header" href="<?php echo esc_url(home_url()); ?>">
-            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/common/logo.png" class="main-logo" alt="ATRAIL" />
-            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/common/logo.png" class="fixed-logo" alt="ATRAIL" />
-            <p>アトレイル株式会社</p>
-          </a>
+        <div>
+          <div class="logo">
+            <a class="logo-header" href="<?php echo esc_url(home_url()); ?>">
+              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/common/logo.png" class="main-logo" alt="ATRAIL" />
+              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/common/logo.png" class="fixed-logo" alt="ATRAIL" />
+              <p>アトレイル株式会社</p>
+            </a>
+          </div>
+          <p>アトレイル株式会社</p>
+        </div>
+        <div style="display:blockflex; flex-direction: row;
+        ">
+          <div>
+            <tel>0120-000-000</tel>
+            <p>受付時間 / 9:00～18:00（水曜定休）</p>
+          </div>
+          <button class="mail">
+            <img src="./assets/images/common/icon-mail.png" alt="" srcset="">
+          </button>
+
         </div>
         <button class="toggle-menu js-toggoleNav">
           <span class="toggle-line">メニュー</span>
