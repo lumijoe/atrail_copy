@@ -258,6 +258,39 @@ div + h1 {
   flex-direction: row;
   align-items: center;
 }
+.l-gallery-section {
+  display: flex;
+  justify-content: center;
+  margin: 0 20px;
+}
+
+.l-gallery-section-inner {
+  max-width: 900px;
+}
+.l-gallery-section .l-gallery {
+  max-width: 860px;
+  height: auto;
+  display: grid;
+  justify-items: stretch;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+}
+.l-gallery-section .l-gallery img {
+  max-width: 100%;
+}
+.l-gallery-section .l-gallery:nth-child(even) {
+  grid-template-columns: 1fr 1fr;
+}
+.l-gallery-section .l-gallery:nth-child(even) img {
+  order: 2;
+}
+.l-gallery-section .l-gallery:nth-child(even) p {
+  order: 1;
+}
+.l-gallery-section ul li + li {
+  padding-top: 20px;
+}
 
 /* *************
 ナビゲーション
