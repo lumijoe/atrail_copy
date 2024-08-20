@@ -17,17 +17,15 @@
   <div class="container">
     <header id="header">
       <div class="header-inner">
-        <div>
+        <div class="flexrowYcenter">
           <div class="logo">
             <a class="logo-header" href="<?php echo esc_url(home_url()); ?>">
-              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/common/logo.png" class="main-logo" alt="ATRAIL" />
               <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/common/logo.png" class="fixed-logo" alt="ATRAIL" />
             </a>
           </div>
-          <p>アトレイル株式会社</p>
+          <h1>アトレイル株式会社</h1>
         </div>
-        <div style="display:flex; flex-direction: row;
-        ">
+        <div style="display:flex; flex-direction: row;">
           <div>
             <tel>0120-000-000</tel>
             <p>受付時間 / 9:00～18:00（水曜定休）</p>
@@ -35,30 +33,6 @@
           <button class="mail">
             <img src="https://lkcodetest.sakura.ne.jp/atrail/wp-content/uploads/images/common/icon-mail.png" alt="" srcset="" style="width:80px; height:auto;">
           </button>
-
-        </div>
-        <button class="toggle-menu js-toggoleNav">
-          <span class="toggle-line">メニュー</span>
-        </button>
-        <div class="header-nav">
-          <!-- <nav class="global-nav">
-            <?php
-            wp_nav_menu([
-              'theme_location' => 'place_global',
-              'container' => false,
-            ]);
-            ?>
-          </nav> -->
-          <form class="search-form" role="search" method="get" action="<?php echo esc_url(home_url()); ?>">
-            <div class="search-box">
-              <input type="text" class="search-input" name="s" placeholder="キーワードを入力してください" />
-              <button type="submit" class="button-submit"></button>
-            </div>
-            <div class="search-buttons">
-              <button type="button" class="close-icon js-searchIcon"></button>
-              <button type="button" class="search-icon js-searchIcon"></button>
-            </div>
-          </form>
         </div>
       </div>
     </header>

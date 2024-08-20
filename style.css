@@ -242,6 +242,23 @@ a {
 input {
   border-radius: 0;
 }
+
+h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+div + h1 {
+  padding-left: 1rem;
+}
+/* *************
+共通
+*************** */
+.flexrowYcenter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 /* *************
 ナビゲーション
 *************** */
@@ -430,6 +447,7 @@ form
   display: flex;
   justify-content: center;
 }
+
 @-webkit-keyframes menu-barTop {
   0% {
     -webkit-transform: translateY(7px) rotate(45deg);
@@ -1969,7 +1987,7 @@ form
   align-items: center;
   max-width: 1280px;
   min-width: 960px;
-  width: 76%;
+  width: 100%;
 }
 
 #header .toggle-menu {
@@ -1978,7 +1996,6 @@ form
 }
 
 #header .logo {
-  width: 248px;
   line-height: 1;
   z-index: 150;
 }
@@ -2169,7 +2186,7 @@ form
 
 #header.standby {
   position: fixed;
-  padding: 24px 0;
+  padding: 1% 0;
   background-color: #fff;
   -webkit-transform: translateY(-100%);
   -ms-transform: translateY(-100%);
